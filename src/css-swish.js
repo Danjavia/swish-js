@@ -160,11 +160,11 @@
 
         // Prep element for animation
         setDuration(elem, 0);
-        elem.style.display = display;
         elem.classList.add(transition);
+        elem.classList.add(config.hiddenClass);
+        elem.style.display = display;
 
         setTimeout(function() {
-            elem.classList.add(config.hiddenClass);
 
             // Set animation flag
             elem.__swishShowing = true;
@@ -188,19 +188,23 @@
 
         // Prep element for animation
         setDuration(elem, 0);
+        elem.classList.add(config.visibleClass);
         elem.classList.add(transition);
 
-        // Set animation flag
-        elem.__swishShowing = false;
-
-        // Carry out animation
-        setDuration(elem, duration);
         setTimeout(function() {
-            elem.classList.remove(config.visibleClass);
-            elem.classList.add(config.hiddenClass);
-            elem.__swishTimer = setTimeout(function() {
-                elem.style.display = 'none';
-            }, duration);
+
+            // Set animation flag
+            elem.__swishShowing = false;
+
+            // Carry out animation
+            setDuration(elem, duration);
+            setTimeout(function() {
+                elem.classList.remove(config.visibleClass);
+                elem.classList.add(config.hiddenClass);
+                elem.__swishTimer = setTimeout(function() {
+                    elem.style.display = 'none';
+                }, duration);
+            }, 0);
         }, 0);
     }
 
@@ -222,7 +226,8 @@
     };
 
     Element.prototype.swish = function(transition, duration) {
-        var showing = this.__swishShowing === undefined ? this.classList.contains('out') : !this.__swishShowing;
+        var style = getComputedStyle(this);
+        var showing = this.__swishShowing === undefined ? style.display === 'none' : !this.__swishShowing;
         swish(this, transition, duration, showing);
     };
 
