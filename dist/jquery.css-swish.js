@@ -60,13 +60,15 @@
                 // Style contains selector
                 for(var k = 0; k < selectors.length; k++) {
                     if(rule.selectorText && rule.selectorText.split(',').indexOf(selectors[k]) !== -1) {
-                        if(rule.style['display'] !== 'none') {
+                        if(rule.style['display'] !== 'none' && rule.style['display'] !== '') {
                             result = rule.style['display'];
                         }
                     }
                 }
             }
         }
+
+        console.log(result);
 
         // Cache and return the display property
         elem.__swishDisplayProperty = result;
@@ -245,7 +247,7 @@
         });
     };
 
-    $.fn.swishConfig = function(config) {
+    $.Swish = function(config) {
         Swish(config);
     };
 

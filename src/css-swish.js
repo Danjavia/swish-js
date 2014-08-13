@@ -57,13 +57,15 @@
                 // Style contains selector
                 for(var k = 0; k < selectors.length; k++) {
                     if(rule.selectorText && rule.selectorText.split(',').indexOf(selectors[k]) !== -1) {
-                        if(rule.style['display'] !== 'none') {
+                        if(rule.style['display'] !== 'none' && rule.style['display'] !== '') {
                             result = rule.style['display'];
                         }
                     }
                 }
             }
         }
+
+        console.log(result);
 
         // Cache and return the display property
         elem.__swishDisplayProperty = result;
@@ -139,7 +141,6 @@
         return result;
     }
 
-
     function setDuration(elem, duration) {
         elem.style.transitionDuration       = duration + 'ms';
         elem.style.WebkitTransitionDuration = duration + 'ms';
@@ -159,18 +160,21 @@
 
         // Prep element for animation
         setDuration(elem, 0);
-        elem.classList.add(transition);
-        elem.classList.add(config.hiddenClass);
         elem.style.display = display;
+        elem.classList.add(transition);
 
-        // Set animation flag
-        elem.__swishShowing = true;
-
-        // Carry out animation
-        setDuration(elem, duration);
         setTimeout(function() {
-            elem.classList.remove(config.hiddenClass);
-            elem.classList.add(config.visibleClass);
+            elem.classList.add(config.hiddenClass);
+
+            // Set animation flag
+            elem.__swishShowing = true;
+
+            // Carry out animation
+            setDuration(elem, duration);
+            setTimeout(function() {
+                elem.classList.remove(config.hiddenClass);
+                elem.classList.add(config.visibleClass);
+            }, 0);
         }, 0);
     }
 
@@ -218,7 +222,8 @@
     };
 
     Element.prototype.swish = function(transition, duration) {
-        swish(this, transition, duration, !this.__swishShowing);
+        var showing = this.__swishShowing === undefined ? this.classList.contains('out') : !this.__swishShowing;
+        swish(this, transition, duration, showing);
     };
 
 })(window);

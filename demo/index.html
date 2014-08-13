@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Swish - A CSS Animation Framework for JavaScript Applications</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="A lightweight JavaScript library for animating elements using pre-defined CSS transitions. Includes jQuery plugin.">
+    <meta name="author" content="Jordan Ranson">
+
+    <link rel="stylesheet" type="text/css" href="site.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css-swish-transitions.min.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="../src/css-swish.js"></script>
+    <script src="../src/jquery.css-swish.js"></script>
+    <script>
+        $(function() {
+            $('#test').swish();
+        });
+
+        // Basic example
+        /*var elem = document.querySelector('#test');
+        elem.swish();
+
+        $('#test').swish();
+
+        // More methods
+        elem.swishIn();
+        elem.swishOut();
+
+        $('#test').swishIn();
+        $('#test').swishOut();
+
+        // Arguments
+        elem.swish(transition);
+        elem.swish(transition, duration);
+
+        $('#test').swish(transition);
+        $('#test').swish(transition, duration);
+
+        // Config
+        Swish({
+            hiddenClass: 'out',
+            visibleClass: 'in'
+        });
+
+        $.Swish({
+            hiddenClass: 'out',
+            visibleClass: 'in'
+        });*/
+    </script>
+
+    <style>
+        #test {
+            width: 100px;
+            height: 100px;
+        }
+
+        .example-transition {
+            transition: all 1s ease-in-out;
+            display: none;
+        }
+
+        .example-transition.out {
+            background: blue;
+        }
+
+        .example-transition.in {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="test" class="out" data-swish-transition="example-transition"></div>
+    <div id="test1" class="out" data-swish-transition="example-transition" data-swish-duration="250"></div>
+    <div id="test2" class="out"></div>
+
+    <div class="wrapper">
+
+        <h1><span>CSS</span> Swish</h1>
+        <h2>A lightweight JavaScript library for animating elements using pre-defined CSS transitions. Includes jQuery plugin.</h2>
+
+        <h3>Sub-header</h3>
+        <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+        <h4>Native JS</h4>
+<pre>function Panel(element, canClose, closeHandler) {
+    this.element = element;
+    this.canClose = canClose;
+    this.closeHandler = function () { if (closeHandler) closeHandler() };
+}</pre>
+        <h4>jQuery</h4>
+<pre>function Panel(element, canClose, closeHandler) {
+    this.element = element;
+    this.canClose = canClose;
+    this.closeHandler = function () { if (closeHandler) closeHandler() };
+}</pre>
+    </div>
+
+</body>
+</html>

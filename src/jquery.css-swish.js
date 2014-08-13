@@ -18,7 +18,7 @@
         });
     };
 
-    $.fn.swishConfig = function(config) {
+    $.Swish = function(config) {
         Swish(config);
     };
 
