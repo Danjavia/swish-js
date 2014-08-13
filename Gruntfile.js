@@ -42,13 +42,23 @@ module.exports = function(grunt) {
                 dest: 'dist/jquery.css-swish.min.js'
             }
         },
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions']
+            },
+            dist: {
+                files: {
+                    'dist/css-swish-transitions.css': ['dist/css-swish-transitions.css']
+                }
+            }
+        },
         cssmin: {
             options: {
                 banner: '<%= banner %>'
             },
             dist: {
                 files: {
-                    'dist/css-swish-transitions.min.css': ['src/css-swish-transitions.css']
+                    'dist/css-swish-transitions.min.css': ['dist/css-swish-transitions.css']
                 }
             }
         },
@@ -64,9 +74,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // Default task.
-    grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['concat', 'uglify', 'autoprefixer', 'cssmin']);
 
 };

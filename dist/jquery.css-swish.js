@@ -1,4 +1,4 @@
-/*! CSS Swish - v0.0.1 - 2014-08-12
+/*! css-swish - v0.0.1 - 2014-08-13
 * https://github.com/jordanranson/css-swish
 * Copyright (c) 2014 Jordan Ranson; Licensed under the Apache2 license */
 (function(window) {
@@ -54,6 +54,8 @@
         var rule;
         for (var i = 0; i < sheets.length; i++) {
             sheet = sheets[i];
+            if(!sheet.cssRules) { continue; }
+
             for (var j = 0; j < sheet.cssRules.length; j++) {
                 rule = sheet.cssRules[j];
 
@@ -104,6 +106,8 @@
         var rule;
         for (var i = 0; i < sheets.length; i++) {
             sheet = sheets[i];
+            if(!sheet.cssRules) { continue; }
+
             for (var j = 0; j < sheet.cssRules.length; j++) {
                 rule = sheet.cssRules[j];
 
@@ -144,7 +148,6 @@
         return result;
     }
 
-
     function setDuration(elem, duration) {
         elem.style.transitionDuration       = duration + 'ms';
         elem.style.WebkitTransitionDuration = duration + 'ms';
@@ -168,14 +171,17 @@
         elem.classList.add(config.hiddenClass);
         elem.style.display = display;
 
-        // Set animation flag
-        elem.__swishShowing = true;
-
-        // Carry out animation
-        setDuration(elem, duration);
         setTimeout(function() {
-            elem.classList.remove(config.hiddenClass);
-            elem.classList.add(config.visibleClass);
+
+            // Set animation flag
+            elem.__swishShowing = true;
+
+            // Carry out animation
+            setDuration(elem, duration);
+            setTimeout(function() {
+                elem.classList.remove(config.hiddenClass);
+                elem.classList.add(config.visibleClass);
+            }, 0);
         }, 0);
     }
 
@@ -189,19 +195,23 @@
 
         // Prep element for animation
         setDuration(elem, 0);
+        elem.classList.add(config.visibleClass);
         elem.classList.add(transition);
 
-        // Set animation flag
-        elem.__swishShowing = false;
-
-        // Carry out animation
-        setDuration(elem, duration);
         setTimeout(function() {
-            elem.classList.remove(config.visibleClass);
-            elem.classList.add(config.hiddenClass);
-            elem.__swishTimer = setTimeout(function() {
-                elem.style.display = 'none';
-            }, duration);
+
+            // Set animation flag
+            elem.__swishShowing = false;
+
+            // Carry out animation
+            setDuration(elem, duration);
+            setTimeout(function() {
+                elem.classList.remove(config.visibleClass);
+                elem.classList.add(config.hiddenClass);
+                elem.__swishTimer = setTimeout(function() {
+                    elem.style.display = 'none';
+                }, duration);
+            }, 0);
         }, 0);
     }
 
@@ -223,7 +233,9 @@
     };
 
     Element.prototype.swish = function(transition, duration) {
-        swish(this, transition, duration, !this.__swishShowing);
+        var style = getComputedStyle(this);
+        var showing = this.__swishShowing === undefined ? style.display === 'none' : !this.__swishShowing;
+        swish(this, transition, duration, showing);
     };
 
 })(window);

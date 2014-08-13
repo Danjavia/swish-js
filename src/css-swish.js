@@ -51,6 +51,8 @@
         var rule;
         for (var i = 0; i < sheets.length; i++) {
             sheet = sheets[i];
+            if(!sheet.cssRules) { continue; }
+
             for (var j = 0; j < sheet.cssRules.length; j++) {
                 rule = sheet.cssRules[j];
 
@@ -101,6 +103,8 @@
         var rule;
         for (var i = 0; i < sheets.length; i++) {
             sheet = sheets[i];
+            if(!sheet.cssRules) { continue; }
+
             for (var j = 0; j < sheet.cssRules.length; j++) {
                 rule = sheet.cssRules[j];
 

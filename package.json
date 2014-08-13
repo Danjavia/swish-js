@@ -1,5 +1,5 @@
 {
-  "name": "CSS Swish",
+  "name": "css-swish",
   "version": "0.0.1",
   "description": "A lightweight JavaScript library for animating elements using pre-defined CSS transitions. Includes jQuery plugin.",
   "main": "Gruntfile.js",
@@ -8,7 +8,8 @@
     "grunt-contrib-concat": "~0.4.0",
     "grunt-contrib-cssmin": "~0.10.0",
     "grunt-contrib-uglify": "~0.5.1",
-    "grunt-contrib-watch": "~0.6.1"
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-autoprefixer": "~1.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

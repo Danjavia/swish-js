@@ -1,19 +1,43 @@
 /* Fade */
-.swish-fade { display: none; }
-.swish-fade.in {}
-.swish-fade.out {}
+.swish-fade {
+    transition: opacity 1s ease-in-out;
+}
+.swish-fade.in {
+    opacity: 1;
+}
+.swish-fade.out {
+    opacity: 0;
+}
 
 /* Slide */
-.swish-slide {}
-.swish-slide.in {}
-.swish-slide.out {}
+.swish-slide {
+    transition: margin 1s ease-in-out;
+}
+.swish-slide.in {
+    margin-left: 0;
+}
+.swish-slide.out {
+    margin-left: -100%;
+}
 
 /* Zoom */
-.swish-zoom {}
-.swish-zoom.in {}
-.swish-zoom.out {}
+.swish-zoom {
+    transition: transform 1s ease-in-out;
+}
+.swish-zoom.in {
+    transform: scale(1,1);
+}
+.swish-zoom.out {
+    transform: scale(0,0);
+}
 
 /* 3D Rotate */
-.swish-3d-rotate {}
-.swish-3d-rotate.in {}
-.swish-3d-rotate.out {}
+.swish-3d-rotate {
+    transition: transform 1s ease-in-out;
+}
+.swish-3d-rotate.in {
+    transform: rotateY(0deg);
+}
+.swish-3d-rotate.out {
+    transform: rotateY(-90deg);
+}

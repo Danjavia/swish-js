@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    line-height: 1;
+}
+
+body {
+    background: #262626 url('congruent_outline.png');
+
+    color: #555;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+}
+
+a:link {
+    color: #B55EC8;
+}
+
+a:hover {
+    color: #994FA9;
+}
+
+.wrapper {
+    margin: 70px auto;
+    padding: 50px 0;
+    width: 50em;
+
+    background: #fff;
+    border-radius: 2px;
+
+    box-shadow: 0 0 7px 1px rgba(0,0,0,.3);
+}
+
+h1, h2, h3, h4, p, pre, .demo {
+    padding: 0 50px;
+    margin-bottom: 30px;
+    display: block;
+    clear: both;
+}
+
+h2, p, pre {
+    line-height: 1.5em;
+}
+
+h1 {
+    letter-spacing: -0.025em;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1.25em;
+}
+
+.download-button {
+    position: relative;
+    float: right;
+    display: inline-block;
+    border-radius: 100px;
+    border: solid 2px #ddd;
+    font-size: 18px;
+    color: #999;
+    font-weight: lighter;
+    letter-spacing: 0;
+    padding: 13px 50px 13px 20px;
+    margin-top: 18px;
+    margin-left: 17px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.download-button:hover {
+    border-color: #EBD6FE;
+}
+
+.download-button::after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    top: 10px; right: 16px;
+    width: 24px;
+    height: 24px;
+
+    background-image: url('download.svg');
+    background-size: 24px 24px;
+
+    opacity: .15;
+}
+
+h2 {
+    margin-bottom: 50px;
+
+    font-size: 32px;
+    font-weight: lighter;
+}
+
+h3 {
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: lighter;
+    color: #999;
+}
+
+h4 {
+    margin-bottom: 17px;
+
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+pre {
+    padding: 30px 50px;
+
+    background: #FAF1FE;
+    border-top: solid 1px #EBD6FE;
+    border-bottom: solid 1px #EBD6FE;
+
+    font-size: 15px;
+}
+
+pre b {
+    color: #93639A;
+}
+
+pre i {
+    font-style: normal;
+    opacity: .6;
+}
+
+.demo {
+    padding: 0 50px;
+    height: 150px;
+    background: #EBD6FE;
+}
+
+.demo-section {
+    position: relative;
+    float: left;
+    width: 25%;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.demo-section div {
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    line-height: 150px;
+    top: 0; left: 0;
+}
+
+.demo-section:nth-child(2n-1) div:last-child {
+    background-color: #B55EC8;
+    color: #fff;
+    z-index: 1;
+}
+
+.demo-section:nth-child(2n) div:last-child {
+    background-color: #914CA1;
+    color: #fff;
+    z-index: 1;
+}
+
+.demo-section:last-child {
+    perspective: 500px;
+}
+
+.demo-section div:first-child {
+    background-color: #FAF1FE;
+    display: none;
+    z-index: 0;
+}
+
+.demo-section div span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.demo-section div.hidden {
+
+}
