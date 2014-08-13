@@ -1,0 +1,19 @@
+/* Fade */
+.swish-fade {}
+.swish-fade.in {}
+.swish-fade.out {}
+
+/* Slide */
+.swish-slide {}
+.swish-slide.in {}
+.swish-slide.out {}
+
+/* Zoom */
+.swish-zoom {}
+.swish-zoom.in {}
+.swish-zoom.out {}
+
+/* 3D Rotate */
+.swish-3d-rotate {}
+.swish-3d-rotate.in {}
+.swish-3d-rotate.out {}

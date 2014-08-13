@@ -1,0 +1,31 @@
+{
+  "name": "css-swish",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jordanranson/css-swish",
+  "authors": [
+    "Jordan Ranson <jordanranson@gmail.com>"
+  ],
+  "description": "A lightweight JavaScript library for animating elements using pre-defined CSS transitions. Includes jQuery plugin.",
+  "main": "dist/css-swish.min.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "css",
+    "jquery",
+    "javascript",
+    "animation",
+    "animated",
+    "transition",
+    "browser",
+    "client"
+  ],
+  "license": "Apache2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
