@@ -15,86 +15,127 @@
     <script src="../src/jquery.css-swish.js"></script>
     <script>
         $(function() {
-            $('#test').swish();
+            
         });
-
-        // Basic example
-        /*var elem = document.querySelector('#test');
-        elem.swish();
-
-        $('#test').swish();
-
-        // More methods
-        elem.swishIn();
-        elem.swishOut();
-
-        $('#test').swishIn();
-        $('#test').swishOut();
-
-        // Arguments
-        elem.swish(transition);
-        elem.swish(transition, duration);
-
-        $('#test').swish(transition);
-        $('#test').swish(transition, duration);
-
-        // Config
-        Swish({
-            hiddenClass: 'out',
-            visibleClass: 'in'
-        });
-
-        $.Swish({
-            hiddenClass: 'out',
-            visibleClass: 'in'
-        });*/
     </script>
-
-    <style>
-        #test {
-            width: 100px;
-            height: 100px;
-        }
-
-        .example-transition {
-            transition: all 1s ease-in-out;
-            display: none;
-        }
-
-        .example-transition.out {
-            background: blue;
-        }
-
-        .example-transition.in {
-            background: red;
-        }
-    </style>
 </head>
 <body>
-
-    <div id="test" class="out" data-swish-transition="example-transition"></div>
-    <div id="test1" class="out" data-swish-transition="example-transition" data-swish-duration="250"></div>
-    <div id="test2" class="out"></div>
-
     <div class="wrapper">
 
         <h1><span>CSS</span> Swish</h1>
-        <h2>A lightweight JavaScript library for animating elements using pre-defined CSS transitions. Includes jQuery plugin.</h2>
+        <h2>A lightweight JavaScript library for animating elements using pre-defined CSS transitions. Includes both native JavaScript and jQuery plugin versions.</h2>
 
-        <h3>Sub-header</h3>
-        <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+
+        <div class="demo">
+
+        </div>
+
+
+        <h3>Basic Example</h3>
+        <p></p>
         <h4>Native JS</h4>
-<pre>function Panel(element, canClose, closeHandler) {
-    this.element = element;
-    this.canClose = canClose;
-    this.closeHandler = function () { if (closeHandler) closeHandler() };
-}</pre>
+        <pre>
+var elem = document.querySelector('#selector');
+elem.swish('swish-fade', 1000);
+        </pre>
         <h4>jQuery</h4>
-<pre>function Panel(element, canClose, closeHandler) {
-    this.element = element;
-    this.canClose = canClose;
-    this.closeHandler = function () { if (closeHandler) closeHandler() };
-}</pre>
+        <pre>
+$('#selector').swish('swish-fade', 1000);
+        </pre>
+
+
+        <h3>Data Attributes</h3>
+        <p></p>
+        <h4>HTML</h4>
+        <pre>
+&lt;div id="selector" data-swish-transition="swish-fade" data-swish-duration="500"&gt;&lt;/div&gt;
+        </pre>
+        <h4>Native JS</h4>
+        <pre>
+var elem = document.querySelector('#selector');
+elem.swish();
+        </pre>
+        <h4>jQuery</h4>
+        <pre>
+$('#selector').swish();
+        </pre>
+
+
+        <h3>More Methods</h3>
+        <p></p>
+        <h4>Native JS</h4>
+        <pre>
+elem.swishIn();
+elem.swishOut();
+        </pre>
+        <h4>jQuery</h4>
+        <pre>
+$('#selector').swishIn();
+$('#selector').swishOut();
+        </pre>
+
+
+        <h3>Default State</h3>
+        <p></p>
+        <h4>HTML</h4>
+        <pre>
+&lt;div class="example" id="selector"&gt;&lt;/div&gt;
+        </pre>
+        <h4>CSS</h4>
+        <pre>
+.example {
+    display: none;
+}
+        </pre>
+
+
+        <h3>Custom Transitions</h3>
+        <p></p>
+        <h4>CSS</h4>
+        <pre>
+.example-transition {
+    transition: all 1s ease-in-out;
+}
+
+.example-transition.out {
+    background: blue;
+}
+
+.example-transition.in {
+    background: red;
+}
+        </pre>
+        <h4>Native JS</h4>
+        <pre>
+var elem = document.querySelector('#selector');
+elem.swish('example-transition');
+        </pre>
+        <h4>jQuery</h4>
+        <pre>
+$('#selector').swish('example-transition');
+        </pre>
+
+
+        <h3>Configuration</h3>
+        <p></p>
+        <h4>Native JS</h4>
+        <pre>
+Swish({
+    hiddenClass: 'out',
+    visibleClass: 'in'
+});
+        </pre>
+        <h4>jQuery</h4>
+        <pre>
+$.Swish({
+    hiddenClass: 'out',
+    visibleClass: 'in'
+});
+        </pre>
+
+
+        <h3>About CSS Swish</h3>
+        <p></p>
     </div>
 
 </body>
