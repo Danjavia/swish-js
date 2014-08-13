@@ -8,8 +8,8 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
             '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
             '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-            '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-            ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+            '* Copyright (c) <%= grunt.template.today("yyyy") %> Jordan Ranson;' +
+            ' Licensed under the Apache2 license */\n',
         // Task configuration.
         concat: {
             options: {
@@ -23,6 +23,10 @@ module.exports = function(grunt) {
             jquery: {
                 src: ['src/css-swish.js', 'src/jquery.css-swish.js'],
                 dest: 'dist/jquery.css-swish.js'
+            },
+            css: {
+                src: ['src/css-swish-transitions.css'],
+                dest: 'dist/css-swish-transitions.css'
             }
         },
         uglify: {
@@ -38,20 +42,14 @@ module.exports = function(grunt) {
                 dest: 'dist/jquery.css-swish.min.js'
             }
         },
-        copy: {
-            main: {
-                files: [
-                    // includes files within path
-                    {expand: true, src: ['src/css-swish-transitions.css'], dest: 'dist/.', filter: 'isFile'}
-                ]
-            }
-        },
         cssmin: {
             options: {
                 banner: '<%= banner %>'
             },
-            files: {
-                'dist/css-swish-transitions.min.css': ['src/css-swish-transitions.css']
+            dist: {
+                files: {
+                    'dist/css-swish-transitions.min.css': ['src/css-swish-transitions.css']
+                }
             }
         },
         watch: {
@@ -67,9 +65,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task.
-    grunt.registerTask('default', ['concat', 'uglify', 'copy', 'cssmin']);
+    grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
 
 };

@@ -1,6 +1,6 @@
-/*! css-swish - v0.0.1 - 2014-08-12
+/*! CSS Swish - v0.0.1 - 2014-08-12
 * https://github.com/jordanranson/css-swish
-* Copyright (c) 2014 ; Licensed  */
+* Copyright (c) 2014 Jordan Ranson; Licensed under the Apache2 license */
 (function(window) {
 
     window.__cssSwish = {};
