@@ -129,7 +129,6 @@ pre i {
 .demo {
     padding: 0 50px;
     height: 150px;
-    background: #EBD6FE;
 }
 
 .demo-section {
@@ -140,7 +139,6 @@ pre i {
     line-height: 150px;
     text-align: center;
 
-    overflow: hidden;
     cursor: pointer;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -175,7 +173,7 @@ pre i {
 }
 
 .demo-section div:first-child {
-    background-color: #FAF1FE;
+    background-color: #EBD6FE;
     display: none;
     z-index: 0;
 }
