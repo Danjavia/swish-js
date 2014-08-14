@@ -90,11 +90,11 @@ $(<i>'#selector'</i>).swish(<i>'swish-fade'</i>, <i>1000</i>);</pre>
 &lt;<b>div</b> id=<i>"selector"</i> data-swish-transition=<i>"swish-fade"</i> data-swish-duration=<i>"500"</i>&gt;&lt;/<b>div</b>&gt;</pre>
         <h4>Native JS</h4>
         <pre>
-var elem = document.querySelector('#selector');
+<b>var</b> elem = document.querySelector(<i>'#selector'</i>);
 elem.swish();</pre>
         <h4>jQuery</h4>
         <pre>
-$('#selector').swish();</pre>
+$(<i>'#selector'</i>).swish();</pre>
 
 
         <h3>More Methods</h3>
@@ -105,19 +105,19 @@ elem.swishIn();
 elem.swishOut();</pre>
         <h4>jQuery</h4>
         <pre>
-$('#selector').swishIn();
-$('#selector').swishOut();</pre>
+$(<i>'#selector'</i>).swishIn();
+$(<i>'#selector'</i>).swishOut();</pre>
 
 
         <h3>Default State</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare orci a erat egestas, in ultrices risus consectetur. Suspendisse faucibus felis non tempor aliquet. Nam rutrum nisl in ipsum accumsan ultricies.</p>
         <h4>HTML</h4>
         <pre>
-&lt;div class="example" id="selector"&gt;&lt;/div&gt;</pre>
+&lt;<b>div</b> class=<i>"example"</i> id=<i>"selector"</i>&gt;&lt;/<b>div</b>&gt;</pre>
         <h4>CSS</h4>
         <pre>
-.example {
-    display: none;
+.<b>example</b> {
+    display: <i>none</i>;
 }</pre>
 
 
@@ -125,24 +125,24 @@ $('#selector').swishOut();</pre>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare orci a erat egestas, in ultrices risus consectetur. Suspendisse faucibus felis non tempor aliquet. Nam rutrum nisl in ipsum accumsan ultricies.</p>
         <h4>CSS</h4>
         <pre>
-.example-transition {
-    transition: all 1s ease-in-out;
+.<b>example-transition</b> {
+    transition: <i>all 1s ease-in-out</i>;
 }
 
-.example-transition.out {
-    background: blue;
+.<b>example-transition</b>.<b>out</b> {
+    background: <i>blue</i>;
 }
 
-.example-transition.in {
-    background: red;
+.<b>example-transition</b>.<b>in</b> {
+    background: <i>red</i>;
 }</pre>
         <h4>Native JS</h4>
         <pre>
-var elem = document.querySelector('#selector');
-elem.swish('example-transition');</pre>
+<b>var</b> elem = document.querySelector(<i>'#selector'</i>);
+elem.swish(<i>'example-transition'</i>);</pre>
         <h4>jQuery</h4>
         <pre>
-$('#selector').swish('example-transition');</pre>
+$(<i>'#selector'</i>).swish(<i>'example-transition'</i>);</pre>
 
 
         <h3>Configuration</h3>
@@ -150,18 +150,18 @@ $('#selector').swish('example-transition');</pre>
         <h4>Native JS</h4>
         <pre>
 Swish({
-    hiddenClass: 'out',
-    visibleClass: 'in'
+    hiddenClass: <i>'out'</i>,
+    visibleClass: <i>'in'</i>
 });</pre>
         <h4>jQuery</h4>
         <pre>
 $.Swish({
-    hiddenClass: 'out',
-    visibleClass: 'in'
+    hiddenClass: <i>'out'</i>,
+    visibleClass: <i>'in'</i>
 });</pre>
 
 
-        <h3>Download</h3>
+        <h3>About</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare orci a erat egestas, in ultrices risus consectetur. Suspendisse faucibus felis non tempor aliquet. Nam rutrum nisl in ipsum accumsan ultricies.</p>
     </div>
 
