@@ -13,7 +13,7 @@ body {
     font-size: 18px;
 }
 
-a:link {
+a:link, a:visited {
     color: #B55EC8;
 }
 
@@ -24,7 +24,7 @@ a:hover {
 .wrapper {
     margin: 70px auto;
     padding: 50px 0;
-    width: 50em;
+    width: 40em;
 
     background: #fff;
     border-radius: 2px;
@@ -50,9 +50,13 @@ h1 {
     line-height: 1.25em;
 }
 
+.download-buttons {
+    margin-bottom: 30px;
+    padding: 0 50px;
+}
+
 .download-button {
     position: relative;
-    float: right;
     display: inline-block;
     border-radius: 100px;
     border: solid 2px #ddd;
@@ -61,8 +65,7 @@ h1 {
     font-weight: lighter;
     letter-spacing: 0;
     padding: 13px 50px 13px 20px;
-    margin-top: 18px;
-    margin-left: 17px;
+    margin-right: 17px;
     cursor: pointer;
     text-decoration: none;
 }
@@ -105,6 +108,17 @@ h4 {
 
     text-transform: uppercase;
     font-size: 14px;
+}
+
+p {
+    word-break: keep-all;
+}
+
+code {
+    background: #B55EC8;
+    font-size: 15px;
+    padding: 2px 5px;
+    color: #fff;
 }
 
 pre {
@@ -184,5 +198,21 @@ pre i {
 }
 
 .demo-section div.hidden {
+    display: none;
+}
 
+.copyright {
+    font-size: 14px;
+    opacity: 0.4;
+    margin-top: 50px;
+}
+
+ul {
+    padding: 0 50px;
+    margin-bottom: 30px;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 17px;
 }
