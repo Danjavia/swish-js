@@ -110,10 +110,6 @@ h4 {
     font-size: 14px;
 }
 
-p {
-    word-break: keep-all;
-}
-
 code {
     background: #B55EC8;
     font-size: 15px;

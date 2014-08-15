@@ -1,4 +1,4 @@
-/*! css-swish - v0.0.1 - 2014-08-13
+/*! css-swish - v0.0.1 - 2014-08-14
 * https://github.com/jordanranson/css-swish
 * Copyright (c) 2014 Jordan Ranson; Licensed under the Apache2 license */
 .swish-fade {
@@ -44,10 +44,10 @@
             transition: transform 1s ease-in-out;
 }
 .swish-3d-rotate.in {
-    -webkit-transform: translate3d(0, 0, 0) rotateY(0deg);
-            transform: translate3d(0, 0, 0) rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
 }
 .swish-3d-rotate.out {
-    -webkit-transform: translate3d(-175%, -50%, 0) rotateY(-90deg);
-            transform: translate3d(-175%, -50%, 0) rotateY(-90deg);
+    -webkit-transform: rotateY(-90deg);
+            transform: rotateY(-90deg);
 }
