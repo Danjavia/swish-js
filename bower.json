@@ -5,8 +5,15 @@
   "authors": [
     "Jordan Ranson <jordanranson@gmail.com>"
   ],
-  "description": "A lightweight JavaScript library for animating elements using pre-defined CSS transitions. Includes jQuery plugin.",
-  "main": "dist/css-swish.min.js",
+  "description": "Easily apply CSS transitions to elements with JavaScript and jQuery. Never worry about animating the display property again.",
+  "main": [
+    "dist/css-swish.js",
+    "dist/css-swish.min.js",
+    "dist/jquery.css-swish.js",
+    "dist/jquery.css-swish.min.js",
+    "dist/css-swish-transitions.css",
+    "dist/css-swish-transitions.min.css"
+  ],
   "moduleType": [
     "es6"
   ],
@@ -26,6 +33,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "demo",
+    "src"
   ]
 }

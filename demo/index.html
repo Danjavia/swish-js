@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSS Swish - A CSS Animation Framework for JavaScript Applications</title>
+    <title>CSS Swish &middot; A CSS Animation Framework for JavaScript Applications</title>
 
     <meta charset="utf-8">
-    <meta name="description" content="A lightweight JavaScript library for animating elements using pre-defined CSS transitions. Includes jQuery plugin.">
+    <meta name="description" content="Easily apply CSS transitions to elements with JavaScript and jQuery. Never worry about animating the display property again.">
     <meta name="author" content="Jordan Ranson">
 
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="site.css">
@@ -79,11 +80,12 @@
         <h3>Basic Example</h3>
         <p>
             Swish works much like jQuery's <code>show</code> and <code>hide</code> methods, which transition the element
-            while toggling its <code>display</code> property.
+            while toggling its <code>display</code> property. Swish does this too, except it transitions using CSS instead
+            of JavaScript.
         </p>
         <p>
-            The first argument is the class name of the CSS transition. Swish comes with four transitions, included in an optional
-            CSS, <code>css-swish-transitions.css</code>:
+            The first argument is the class name of the CSS transition. Swish comes with four transitions, included in
+            the optional <code>css-swish-transitions.css</code>:
         </p>
         <ul>
             <li><code>swish-fade</code></li>
@@ -133,34 +135,26 @@ $(<i>'#selector'</i>).swish();</pre>
         </p>
         <h4>Native JS</h4>
         <pre>
-elem.swishIn();
-elem.swishOut();</pre>
+elem.swishIn(<em>transition</em>, <em>duration</em>);
+elem.swishOut(<em>transition</em>, <em>duration</em>);</pre>
         <h4>jQuery</h4>
         <pre>
-$(<i>'#selector'</i>).swishIn();
-$(<i>'#selector'</i>).swishOut();</pre>
+$(<i>'#selector'</i>).swishIn(<em>transition</em>, <em>duration</em>);
+$(<i>'#selector'</i>).swishOut(<em>transition</em>, <em>duration</em>);</pre>
 
 
         <h3>Default State</h3>
         <p>
-            If the default state of your element is hidden, you will need to add <code>display: none</code> to that element.
+            If the default state of your element is hidden, you will need to add <code>display:&nbsp;none</code> to that element.
             This lets Swish know that the element isn't visible.
         </p>
-        <h4>HTML</h4>
-        <pre>
-&lt;<b>div</b> class=<i>"example"</i> id=<i>"selector"</i>&gt;&lt;/<b>div</b>&gt;</pre>
-        <h4>CSS</h4>
-        <pre>
-.<b>example</b> {
-    display: <i>none</i>;
-}</pre>
 
 
         <h3>Custom Transitions</h3>
         <p>
             Swish wouldn't be very useful if you couldn't supply your own transitions, and it lets you do just that!
-            You just need a main transition class and an in and an out state. The in state is applied when the element is
-            visible, and the out state when hidden.
+            You just need a main transition class and an <b>in</b> and <b>out</b> state. The <b>in</b> state is applied when the element is
+            visible, and the <b>out</b> state when hidden.
         </p>
         <h4>CSS</h4>
         <pre>
@@ -221,7 +215,7 @@ $.Swish({
         <p>You can view the source to this project on <a href="https://github.com/jordanranson/css-swish">GitHub</a>.</p>
         <p>
             If you like this project, why not check out my other work <a href="//www.jordanranson.com" target="_blank">on my site</a> and
-            <a href="">follow me on twitter</a>.
+            <a href="https://twitter.com/jordanranson" target="_blank">follow me on twitter</a>.
         </p>
         <p class="copyright">&copy; 2014 Jordan Ranson</p>
     </div>
