@@ -62,6 +62,40 @@ module.exports = function(grunt) {
                 }
             }
         },
+        compress: {
+            javascript: {
+                options: {
+                    archive: 'demo/css-swish-js.zip'
+                },
+                files: [
+                    {
+                        src: [
+                            'dist/css-swish.js',
+                            'dist/css-swish.min.js',
+                            'dist/css-swish-transitions.css',
+                            'dist/css-swish-transitions.min.css'
+                        ],
+                        filter: 'isFile'
+                    }
+                ]
+            },
+            jquery: {
+                options: {
+                    archive: 'demo/css-swish-jquery.zip'
+                },
+                files: [
+                    {
+                        src: [
+                            'dist/jquery.css-swish.js',
+                            'dist/jquery.css-swish.min.js',
+                            'dist/css-swish-transitions.css',
+                            'dist/css-swish-transitions.min.css'
+                        ],
+                        filter: 'isFile'
+                    }
+                ]
+            }
+        },
         watch: {
             gruntfile: {
                 files: '<%= jshint.gruntfile.src %>',
@@ -76,8 +110,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
     // Default task.
-    grunt.registerTask('default', ['concat', 'uglify', 'autoprefixer', 'cssmin']);
+    grunt.registerTask('default', ['concat', 'uglify', 'autoprefixer', 'cssmin', 'compress']);
 
 };

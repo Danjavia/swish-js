@@ -1,3 +1,5 @@
 node_modules/
 .idea/
 .grunt-init/
+.DS_Store
+thumbs.db
