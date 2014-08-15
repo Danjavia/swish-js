@@ -145,6 +145,9 @@ visibleClass: 'in'
 });
 ```
 
+### Bower
+Swish is also available as a Bower package. Just type `bower install css-swish`.
+
 ### About
 
 I made this library out of the frustrations of dealing with tedious transition bugs involving the display
