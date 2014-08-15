@@ -97,15 +97,15 @@ visible, and the out state when hidden.
 
 ```css
 .example-transition {
-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .example-transition.out {
-background: blue;
+  background: blue;
 }
 
 .example-transition.in {
-background: red;
+  background: red;
 }
 ```
 
