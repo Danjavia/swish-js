@@ -1,6 +1,5 @@
 {
   "name": "css-swish",
-  "version": "1.0.0",
   "homepage": "https://github.com/jordanranson/css-swish",
   "authors": [
     "Jordan Ranson <jordanranson@gmail.com>"
@@ -35,11 +34,16 @@
     "test",
     "tests",
     "demo",
-    "src",
-    ".bower.json",
-    ".DS_Store",
-    "bower.json",
-    "Gruntfile.js",
-    "package.json"
-  ]
+    "src"
+  ],
+  "_release": "db95fcecf6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "db95fcecf6247daabc08afe18ca6a968b2370b55"
+  },
+  "_source": "https://github.com/jordanranson/css-swish.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/jordanranson/css-swish.git",
+  "_direct": true
 }

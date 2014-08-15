@@ -35,11 +35,6 @@
     "test",
     "tests",
     "demo",
-    "src",
-    ".bower.json",
-    ".DS_Store",
-    "bower.json",
-    "Gruntfile.js",
-    "package.json"
+    "src"
   ]
 }
