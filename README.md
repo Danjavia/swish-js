@@ -166,6 +166,6 @@ You can view the source to this project on [GitHub](https://github.com/jordanran
 If you like this project, why not check out my other work [on my site](//www.jordanranson.com) and
 [follow me on twitter](https://twitter.com/jordanranson).
 
-CSS Swish is licensed under the Apache 2 license.
+SwishJS is licensed under the Apache 2 license.
 
 &copy; 2014 Jordan Ranson
