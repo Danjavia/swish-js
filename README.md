@@ -1,4 +1,4 @@
-# CSS Swish
+# SwishJS
 
 ## 
 Easily apply CSS transitions to elements with JavaScript and jQuery. Never worry about animating the display
