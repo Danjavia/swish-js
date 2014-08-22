@@ -122,6 +122,36 @@ elem.swish('example-transition');
 $('#selector').swish('example-transition');
 ```
 
+### Return Value
+
+Swish returns the duration of the animation in ms when called. This can be useful if you need to queue animations. Because jQuery methods are all monads, the jQuery plugin does not have this behaviour by default and requires additional parameters to be supplied.
+
+#### Native JS
+
+```javascript
+var duration = elem.swish();
+// duration = 1000, the default as specified in CSS
+
+var duration = elem.swish('example-transition');
+// duration = 1000, the default as specified in CSS
+
+var duration = elem.swish('example-transition', 5000);
+// duration = 5000, the value provided to the method
+```
+
+#### jQuery
+
+```javascript
+var duration = $('#selector').swish(true);
+// duration = 1000, the default as specified in CSS
+
+var duration = $('#selector').swish('example-transition', true);
+// duration = 1000, the default as specified in CSS
+
+var duration = $('#selector').swish('example-transition', 5000, true);
+// duration = 5000, the value provided to the method
+```
+
 ### Configuration
 
 By default Swish uses the classes `in` and `out` to show and hide elements. If this

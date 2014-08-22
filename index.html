@@ -179,6 +179,35 @@ elem.swish(<i>'example-transition'</i>);</pre>
 $(<i>'#selector'</i>).swish(<i>'example-transition'</i>);</pre>
 
 
+    <h3>Return Value</h3>
+    <p>
+        Swish returns the duration of the animation in ms when called. This can be useful if you need to queue animations.
+        Because jQuery methods are all monads, the jQuery plugin does not have this behaviour by default and requires
+        additional parameters to be supplied.
+    </p>
+    <h4>Native JS</h4>
+        <pre>
+<b>var</b> duration = elem.swish();
+<em>// duration = 1000, the default as specified in CSS</em>
+
+<b>var</b> duration = elem.swish(<i>'example-transition'</i>);
+<em>// duration = 1000, the default as specified in CSS</em>
+
+<b>var</b> duration = elem.swish(<i>'example-transition'</i>, <i>5000</i>);
+<em>// duration = 5000, the value provided to the method</em></pre>
+
+    <h4>jQuery</h4>
+    <pre>
+<b>var</b> duration = $(<i>'#selector'</i>).swish(<i>true</i>);
+<em>// duration = 1000, the default as specified in CSS</em>
+
+<b>var</b> duration = $(<i>'#selector'</i>).swish(<i>'example-transition'</i>, <i>true</i>);
+<em>// duration = 1000, the default as specified in CSS</em>
+
+<b>var</b> duration = $(<i>'#selector'</i>).swish(<i>'example-transition'</i>, <i>5000</i>, <i>true</i>);
+<em>// duration = 5000, the value provided to the method</em></pre>
+
+
     <h3>Configuration</h3>
     <p>
         By default Swish uses the classes <code>in</code> and <code>out</code> to show and hide elements. If this
