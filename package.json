@@ -1,6 +1,6 @@
 {
-  "name": "css-swish",
-  "version": "0.0.1",
+  "name": "swish-js",
+  "version": "1.1.0",
   "description": "A lightweight JavaScript library for animating elements using pre-defined CSS transitions. Includes jQuery plugin.",
   "main": "Gruntfile.js",
   "devDependencies": {
