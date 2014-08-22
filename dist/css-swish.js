@@ -1,4 +1,4 @@
-/*! css-swish - v0.0.1 - 2014-08-14
+/*! css-swish - v0.0.1 - 2014-08-22
 * https://github.com/jordanranson/css-swish
 * Copyright (c) 2014 Jordan Ranson; Licensed under the Apache2 license */
 (function(window) {
@@ -219,23 +219,25 @@
         var t = transition || getTransition(elem);
         var d =   duration || getTransitionDuration(elem, t);
 
-        if(t === null) return; // no transition supplied
+        if(t === null) return null; // no transition supplied
 
         showing ? swishIn(elem, t, d) : swishOut(elem, t, d);
+
+        return d;
     }
 
     Element.prototype.swishIn = function(transition, duration) {
-        swish(this, transition, duration, true);
+        return swish(this, transition, duration, true);
     };
 
     Element.prototype.swishOut = function(transition, duration) {
-        swish(this, transition, duration, false);
+        return swish(this, transition, duration, false);
     };
 
     Element.prototype.swish = function(transition, duration) {
         var style = getComputedStyle(this);
         var showing = this.__swishShowing === undefined ? style.display === 'none' : !this.__swishShowing;
-        swish(this, transition, duration, showing);
+        return swish(this, transition, duration, showing);
     };
 
 })(window);

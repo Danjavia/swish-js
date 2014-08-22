@@ -98,8 +98,8 @@ module.exports = function(grunt) {
         },
         watch: {
             gruntfile: {
-                files: '<%= jshint.gruntfile.src %>',
-                tasks: ['jshint:gruntfile']
+                files: ['src/*.css', 'src/*.js'],
+                tasks: ['default']
             }
         }
     });
@@ -114,5 +114,6 @@ module.exports = function(grunt) {
 
     // Default task.
     grunt.registerTask('default', ['concat', 'uglify', 'autoprefixer', 'cssmin', 'compress']);
+    grunt.registerTask('spy', ['default', 'watch']);
 
 };

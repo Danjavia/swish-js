@@ -1,25 +1,64 @@
-(function($, window, document) {
+(function($) {
 
-    $.fn.swish = function(transition, duration) {
+    $.fn.swish = function(transition, duration, returnDuration) {
+        var d = 0;
+
+        if(transition === true) {
+            returnDuration = true;
+            transition = undefined;
+        }
+        if(duration === true) {
+            returnDuration = true;
+            duration = undefined;
+        }
+
         this.each(function() {
-            $(this)[0].swish(transition, duration);
+            d = $(this)[0].swish(transition, duration);
         });
+
+        return (returnDuration) ? d : this;
     };
 
-    $.fn.swishIn = function(transition, duration) {
+    $.fn.swishIn = function(transition, duration, returnDuration) {
+        var d = 0;
+
+        if(transition === true) {
+            returnDuration = true;
+            transition = undefined;
+        }
+        if(duration === true) {
+            returnDuration = true;
+            duration = undefined;
+        }
+
         this.each(function() {
-            $(this)[0].swishIn(transition, duration);
+            d = $(this)[0].swishIn(transition, duration);
         });
+
+        return (returnDuration) ? d : this;
     };
 
-    $.fn.swishOut = function(transition, duration) {
+    $.fn.swishOut = function(transition, duration, returnDuration) {
+        var d = 0;
+
+        if(transition === true) {
+            returnDuration = true;
+            transition = undefined;
+        }
+        if(duration === true) {
+            returnDuration = true;
+            duration = undefined;
+        }
+
         this.each(function() {
-            $(this)[0].swishOut(transition, duration);
+            d = $(this)[0].swishOut(transition, duration);
         });
+
+        return (returnDuration) ? d : this;
     };
 
     $.Swish = function(config) {
         Swish(config);
     };
 
-})(jQuery, window, document);
+})(jQuery);
