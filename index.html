@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SwishJS &middot; A CSS Animation Framework for JavaScript Applications</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Easily apply CSS transitions to elements with JavaScript and jQuery. Never worry about animating the display property again.">
+    <meta name="author" content="Jordan Ranson">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="demo/site.css">
+    <link rel="stylesheet" type="text/css" href="dist/css-swish-transitions.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="dist/css-swish.js"></script>
+    <script src="dist/jquery.css-swish.js"></script>
+    <script>
+        $(function() {
+            $('.demo-section div').click(function() {
+                var $tar = $(this);
+                $tar.swish();
+                $tar.siblings('div').swish();
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrapper">
+
+    <h1>
+        <span>SwishJS</span>
+    </h1>
+    <div class="download-buttons">
+        <a href="demo/css-swish-js.zip" class="download-button">Download JS</a>
+        <a href="demo/css-swish-jquery.zip" class="download-button">Download jQuery Plugin</a>
+    </div>
+    <h2>
+        Easily apply CSS transitions to elements with JavaScript and jQuery. Never worry about animating the display
+        property again.
+    </h2>
+
+    <div class="demo">
+        <div class="demo-section">
+            <div class="x-demo-1-a hidden" data-swish-transition="swish-fade">
+                <span>Fade In</span>
+            </div>
+            <div class="x-demo-1-b" data-swish-transition="swish-fade">
+                <span>Fade Out</span>
+            </div>
+        </div>
+        <div class="demo-section">
+            <div class="x-demo-2-a hidden" data-swish-transition="swish-zoom">
+                <span>Zoom In</span>
+            </div>
+            <div class="x-demo-2-b" data-swish-transition="swish-zoom">
+                <span>Zoom Out</span>
+            </div>
+        </div>
+        <div class="demo-section" style="overflow:hidden">
+            <div class="x-demo-3-a hidden" data-swish-transition="swish-slide">
+                <span>Slide In</span>
+            </div>
+            <div class="x-demo-3-b" data-swish-transition="swish-slide">
+                <span>Slide Out</span>
+            </div>
+        </div>
+        <div class="demo-section">
+            <div class="x-demo-4-a hidden" data-swish-transition="swish-3d-rotate">
+                <span>3D Rotate In</span>
+            </div>
+            <div class="x-demo-4-b" data-swish-transition="swish-3d-rotate">
+                <span>3D Rotate Out</span>
+            </div>
+        </div>
+    </div>
+
+
+    <h3>Basic Example</h3>
+    <p>
+        Swish works much like jQuery's <code>show</code> and <code>hide</code> methods, which transition the element
+        while toggling its <code>display</code> property. Swish does this too, except it transitions using CSS instead
+        of JavaScript.
+    </p>
+    <p>
+        The first argument is the class name of the CSS transition. Swish comes with four transitions, included in
+        the optional <code>css-swish-transitions.css</code>:
+    </p>
+    <ul>
+        <li><code>swish-fade</code></li>
+        <li><code>swish-zoom</code></li>
+        <li><code>swish-slide</code></li>
+        <li><code>swish-3d-rotate</code></li>
+    </ul>
+    <p>
+        The second argument is the duration of the transition in milliseconds. If unsupplied, Swish will use the duration
+        set in your stylesheet. Then just call <code>swish</code> to toggle the transition.
+    </p>
+    <h4>Native JS</h4>
+        <pre>
+<b>var</b> elem = document.querySelector(<i>'#selector'</i>);
+elem.swish(<i>'swish-fade'</i>, <i>1000</i>);</pre>
+    <h4>jQuery</h4>
+        <pre>
+$(<i>'#selector'</i>).swish(<i>'swish-fade'</i>, <i>1000</i>);</pre>
+
+
+    <h3>Data Attributes</h3>
+    <p>
+        The easiest way to use Swish is to add data attributes to your markup. Set the transition class using
+        <code>data&#8209;swish&#8209;transition</code> and the duration with <code>data&#8209;swish&#8209;duration</code>. The duration attribute
+        is optional and will default to the rules in your stylesheet.
+    </p>
+    <h4>HTML</h4>
+        <pre>
+&lt;<b>div</b>
+    id=<i>"selector"</i>
+    data-swish-transition=<i>"swish-fade"</i>
+    data-swish-duration=<i>"500"</i>
+&gt;&lt;/<b>div</b>&gt;</pre>
+    <h4>Native JS</h4>
+        <pre>
+<b>var</b> elem = document.querySelector(<i>'#selector'</i>);
+elem.swish();</pre>
+    <h4>jQuery</h4>
+        <pre>
+$(<i>'#selector'</i>).swish();</pre>
+
+
+    <h3>More Methods</h3>
+    <p>
+        You can also transition in a specific direction using <code>swishIn</code> and <code>swishOut</code>. These
+        methods take the same arguments as <code>swish</code>.
+    </p>
+    <h4>Native JS</h4>
+        <pre>
+elem.swishIn(<em>transition</em>, <em>duration</em>);
+elem.swishOut(<em>transition</em>, <em>duration</em>);</pre>
+    <h4>jQuery</h4>
+        <pre>
+$(<i>'#selector'</i>).swishIn(<em>transition</em>, <em>duration</em>);
+$(<i>'#selector'</i>).swishOut(<em>transition</em>, <em>duration</em>);</pre>
+
+
+    <h3>Default State</h3>
+    <p>
+        If the default state of your element is hidden, you will need to add <code>display:&nbsp;none</code> to that element.
+        This lets Swish know that the element isn't visible.
+    </p>
+
+
+    <h3>Custom Transitions</h3>
+    <p>
+        Swish wouldn't be very useful if you couldn't supply your own transitions, and it lets you do just that!
+        You just need a main transition class and an <b>in</b> and <b>out</b> state. The <b>in</b> state is applied when the element is
+        visible, and the <b>out</b> state when hidden.
+    </p>
+    <h4>CSS</h4>
+        <pre>
+.<b>example-transition</b> {
+    transition: <i>all 1s ease-in-out</i>;
+}
+
+.<b>example-transition</b>.<b>out</b> {
+    background: <i>blue</i>;
+}
+
+.<b>example-transition</b>.<b>in</b> {
+    background: <i>red</i>;
+}</pre>
+    <h4>Native JS</h4>
+        <pre>
+<b>var</b> elem = document.querySelector(<i>'#selector'</i>);
+elem.swish(<i>'example-transition'</i>);</pre>
+    <h4>jQuery</h4>
+        <pre>
+$(<i>'#selector'</i>).swish(<i>'example-transition'</i>);</pre>
+
+
+    <h3>Configuration</h3>
+    <p>
+        By default Swish uses the classes <code>in</code> and <code>out</code> to show and hide elements. If this
+        doesn't work with your project, you can configure Swish to use other classes.
+    </p>
+    <h4>Native JS</h4>
+        <pre>
+Swish({
+    hiddenClass: <i>'out'</i>,
+    visibleClass: <i>'in'</i>
+});</pre>
+    <h4>jQuery</h4>
+        <pre>
+$.Swish({
+    hiddenClass: <i>'out'</i>,
+    visibleClass: <i>'in'</i>
+});</pre>
+
+
+    <h3>Bower</h3>
+
+    <p>Swish is also available as a Bower package. Just type <code>bower install css&#8209;swish</code>.</p>
+
+
+    <h3>About</h3>
+    <p>
+        I made this library out of the frustrations of dealing with tedious transition bugs involving the display
+        property. Developers shouldn't have to do silly things like nesting <code>setTimeout</code> calls just to get
+        animations to work properly.
+    </p>
+    <p>
+        If you'd like to learn more about the problems with animating the display property, Louis Lazaris has written
+        a <a href="http://www.impressivewebs.com/animate-display-block-none/" target="_blank">very informative article</a>
+        on the topic.
+    </p>
+    <p>
+        If you use Swish, I'd love to hear about it! Let me know if you make something cool and I'll give you a shout
+        out on this page!
+    </p>
+    <p>You can view the source to this project on <a href="https://github.com/jordanranson/swish-js">GitHub</a>.</p>
+    <p>
+        If you like this project, why not check out my other work <a href="//www.jordanranson.com" target="_blank">on my site</a> and
+        <a href="https://twitter.com/jordanranson" target="_blank">follow me on twitter</a>.
+    </p>
+    <p class="copyright">&copy; 2014 Jordan Ranson</p>
+</div>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49981032-5', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>
