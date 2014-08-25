@@ -1,4 +1,4 @@
-/*! css-swish - v0.0.1 - 2014-08-22
+/*! swish-js - v1.1.0 - 2014-08-25
 * https://github.com/jordanranson/css-swish
 * Copyright (c) 2014 Jordan Ranson; Licensed under the Apache2 license */
 (function(window) {
@@ -48,7 +48,10 @@
         // Find the implicit display property
         var sheet;
         var sheets = document.styleSheets;
-        var selectors = ['#'+elem.id].concat(elem.classList);
+        var selectors = ['#'+elem.id];
+        for(var i = 0; i < elem.classList.length; i++) {
+            selectors.push('.'+elem.classList[i]);
+        }
 
         // Iterate over page styles until a match is found
         var rule;
@@ -61,16 +64,16 @@
 
                 // Style contains selector
                 for(var k = 0; k < selectors.length; k++) {
+                    //console.log(rule.selectorText);
                     if(rule.selectorText && rule.selectorText.split(',').indexOf(selectors[k]) !== -1) {
                         if(rule.style['display'] !== 'none' && rule.style['display'] !== '') {
                             result = rule.style['display'];
+                            //break;
                         }
                     }
                 }
             }
         }
-
-        console.log(result);
 
         // Cache and return the display property
         elem.__swishDisplayProperty = result;
