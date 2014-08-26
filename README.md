@@ -177,7 +177,7 @@ visibleClass: 'in'
 ```
 
 ### Bower
-Swish is also available as a Bower package. Just type `bower install css-swish`.
+Swish is also available as a Bower package. Just type `bower install swish-js`.
 
 ### About
 
