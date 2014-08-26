@@ -170,6 +170,7 @@
 
         // Prep element for animation
         setDuration(elem, 0);
+        if(elem.__swishLastTransition) { elem.classList.remove(elem.__swishLastTransition); }
         elem.classList.add(transition);
         elem.classList.add(config.hiddenClass);
         elem.style.display = display;
@@ -178,6 +179,7 @@
 
             // Set animation flag
             elem.__swishShowing = true;
+            elem.__swishLastTransition = transition;
 
             // Carry out animation
             setDuration(elem, duration);
@@ -198,6 +200,7 @@
 
         // Prep element for animation
         setDuration(elem, 0);
+        if(elem.__swishLastTransition) { elem.classList.remove(elem.__swishLastTransition); }
         elem.classList.add(config.visibleClass);
         elem.classList.add(transition);
 
@@ -205,6 +208,7 @@
 
             // Set animation flag
             elem.__swishShowing = false;
+            elem.__swishLastTransition = transition;
 
             // Carry out animation
             setDuration(elem, duration);
