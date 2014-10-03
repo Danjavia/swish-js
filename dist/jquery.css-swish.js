@@ -1,4 +1,4 @@
-/*! swish-js - v1.1.0 - 2014-08-25
+/*! swish-js - v1.1.0 - 2014-10-03
 * https://github.com/jordanranson/css-swish
 * Copyright (c) 2014 Jordan Ranson; Licensed under the Apache2 license */
 (function(window) {
@@ -57,7 +57,14 @@
         var rule;
         for (var i = 0; i < sheets.length; i++) {
             sheet = sheets[i];
-            if(!sheet.cssRules) { continue; }
+
+            // fix for firefox security error with cross-origin css files
+            try {
+                if(!sheet.cssRules) { continue; }
+            } catch (e) {
+                if (console && console.warn) console.warn('error parsing stylesheet: ' + sheet);
+                continue;
+            }
 
             for (var j = 0; j < sheet.cssRules.length; j++) {
                 rule = sheet.cssRules[j];
