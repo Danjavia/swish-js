@@ -54,7 +54,14 @@
         var rule;
         for (var i = 0; i < sheets.length; i++) {
             sheet = sheets[i];
-            if(!sheet.cssRules) { continue; }
+
+            // fix for firefox security error with cross-origin css files
+            try {
+                if(!sheet.cssRules) { continue; }
+            } catch (e) {
+                if (console && console.warn) console.warn('error parsing stylesheet: ' + sheet);
+                continue;
+            }
 
             for (var j = 0; j < sheet.cssRules.length; j++) {
                 rule = sheet.cssRules[j];
